@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <meta name="description" content="A weather application that displays real-time weather data for different locations">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#4a90e2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <div class="weather-container">
+        <section id="search-section">
+            <div class="search-inputs">
+                <input type="text" id="location-input" placeholder="Enter Your City Name" class="search-input"/>
+                <button id="search-button" class="search-button">Search</button>
+            </div>            
+        </section>
+        
+        
+        <section id="current-weather" class="weather-section">
+            <h2>Current Weather</h2>
+            <div class="weather-card">
+                <div class="location-name" id="location-name"></div>
+                <div class="weather-info-grid">
+                    <div class="weather-metric">
+                        <span class="metric-icon"><i class="fas fa-thermometer-half"></i></span>
+                        <span class="metric-label">Temperature</span>
+                        <span class="metric-value" id="temperature-value">--</span>
+                        <span class="metric-unit">°C</span>
+                    </div>
+                    <div class="weather-metric">
+                        <span class="metric-icon"><i class="fas fa-cloud"></i></span>
+                        <span class="metric-label">Condition</span>
+                        <span class="metric-value" id="condition-value">--</span>
+                    </div>
+                    <div class="weather-metric">
+                        <span class="metric-icon"><i class="fas fa-tint"></i></span>
+                        <span class="metric-label">Humidity</span>
+                        <span class="metric-value" id="humidity-value">--</span>
+                        <span class="metric-unit">%</span>
+                    </div>
+                    <div class="weather-metric">
+                        <span class="metric-icon"><i class="fas fa-wind"></i></span>
+                        <span class="metric-label">Wind Speed</span>
+                        <span class="metric-value" id="wind-speed-value">--</span>
+                        <span class="metric-unit">km/h</span>
+                    </div>
+                    <div class="weather-metric">
+                        <span class="metric-icon"><i class="fas fa-temperature-high"></i></span>
+                        <span class="metric-label">Feels Like</span>
+                        <span class="metric-value" id="feels-like-value">--</span>
+                        <span class="metric-unit">°C</span>
+                    </div>
+                    <div class="weather-metric">
+                        <span class="metric-icon"><i class="fas fa-chart-line"></i></span>
+                        <span class="metric-label">Pressure</span>
+                        <span class="metric-value" id="pressure-value">--</span>
+                        <span class="metric-unit">hPa</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section id="forecast" class="weather-section">
+            <h2>5-Day Forecast</h2>
+            <div class="forecast-grid" id="forecast-grid"></div>
+        </section>
+        
+        
+        <section id="historical-data" class="weather-section">
+            <h2>Historical Data</h2>
+            <div class="historical-chart-container"> 
+                <canvas id="historical-data-chart" class="chart-canvas"></canvas>
+            </div>
+        </section>
+        
+        
+        <section id="search-history" class="weather-section">
+            <h2>Previous Searches</h2>
+            <div id="previous-searches" class="previous-searches"></div>
+        </section>
+    </div>
+    
+    
+    <div id="location-selector" class="location-selector">
+        <div class="location-selector-header">
+            <h2>Select Location</h2>
+            <button id="close-selector" class="close-button"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="location-options" class="location-options"></div>
+    </div>
+    
+    
+    <div id="error-message" class="error-message"></div>
+    
+    
+    <div id="loading-indicator" class="loading-indicator">
+        <div class="spinner"></div>
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
